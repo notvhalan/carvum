@@ -1,0 +1,29 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Styling for the company text section */
+.company-text {
+  position: absolute;
+  top: 15%; /* Center vertically */
+  left: 70%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust position to exact center */
+  color: #000; /* Black text color */
+  text-align: center; /* Center align text */
+}
+
+/* Styling for the title */
+.company-title {
+  font-family: 'Playfair Display', serif; /* Primary font for titles */
+  font-size: 48px; /* Large font size for the heading */
+  font-weight: 700; /* Bold font weight */
+  margin-bottom: 20px; /* Spacing below the heading */
+}
+
+/* Styling for the description */
+.company-description {
+  font-family: 'Lato', sans-serif; /* Secondary font for body text */
+  font-size: 18px; /* Smaller font size for the paragraph */
+  font-weight: 400; /* Regular font weight */
+  line-height: 1.6; /* Better readability */
+  margin: 0; /* Remove default margins */
+}

@@ -1,0 +1,72 @@
+/* Navbar.css */
+.navbar {
+    position: fixed;
+    top: 15%;
+    right: 5%;
+    padding: 15px 25px;
+    border-radius: 10px; /* Smooth edges */
+    display: flex;
+    align-items: center;
+    z-index: 10; /* Ensure it stays above 3D content */
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar li {
+    position: relative; /* Necessary for dropdown positioning */
+    margin: 0 20px; /* Spacing between main menu items */
+    color: rgb(0, 0, 0);
+    font-size: 18px; /* Slightly larger font for readability */
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .navbar li:hover {
+    color: #00bcd4; /* Highlight on hover */
+  }
+  
+  /* Dropdown menu */
+  .navbar .dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: calc(100% + 0px); /* Position slightly below the parent item */
+    left: 0;
+
+    color: rgba(0, 0, 0, 0.95); /* Darker background for dropdown */
+    border-radius: 10px;
+    padding: 10px 15px; /* Padding inside dropdown */
+    list-style: none;
+    z-index: 20;
+    opacity: 0; /* Start hidden */
+    pointer-events: none; /* Prevent interaction while hidden */
+    transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+  }
+  
+  /* Show dropdown on hover */
+  .navbar li:hover .dropdown {
+    display: block;
+    opacity: 1; /* Fully visible */
+    pointer-events: auto; /* Enable interaction */
+  }
+  
+  /* Dropdown items */
+  .navbar .dropdown li {
+    margin: 5px 0;
+    padding: 5px 10px;
+
+    color: rgba(0, 0, 0, 0.95); /* Darker background for dropdown */
+    font-size: 16px; /* Smaller font for dropdown items */
+    border-radius: 5px; /* Slight rounding for hover effect */
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .navbar .dropdown li:hover {
+    background-color: #00bcd4; /* Highlight dropdown item */
+    color: black; /* Contrast with background */
+  }
+  
