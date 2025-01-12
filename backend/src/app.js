@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 
-// Middleware check
+// Middleware check s
 app.use(express.json());
 app.use(cors({
     origin: process.env.FRONTEND_URL || 'http://localhost:5173',
