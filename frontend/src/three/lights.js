@@ -10,4 +10,4 @@ export const addLights = () => {
   scene.add(directionalLight);
 };
 
-//s
+//ss
