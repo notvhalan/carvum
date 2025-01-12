@@ -40,7 +40,7 @@ jobs:
 
       - name: Install dependencies and build backend
         run: |
-          cd backend # Update the path if needed
+          cd backend/src # Update the path if needed
           npm install
           npm run build --if-present
 
