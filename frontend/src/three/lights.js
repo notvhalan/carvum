@@ -9,3 +9,5 @@ export const addLights = () => {
   directionalLight.position.set(10, 20, 10);
   scene.add(directionalLight);
 };
+
+//s
