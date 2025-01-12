@@ -10,7 +10,7 @@ export const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 
-// Handle window resizing s
+// Handle window resizing ss
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
