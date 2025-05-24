@@ -7,7 +7,7 @@ const Navbar = () => {
       <ul>
         <li>Home</li>
         <li>
-          Solutions <span>▼</span>
+          Solutions <span className="dropdown-arrow">▼</span> {/* Added className */}
           <ul className="dropdown">
             <li>
               <a href="https://neram.live" target="_blank" rel="noopener noreferrer">
@@ -23,7 +23,7 @@ const Navbar = () => {
           </ul>
         </li>
         <li>
-          Services <span>▼</span>
+          Services <span className="dropdown-arrow">▼</span> {/* Added className */}
           <ul className="dropdown">
             <li>Investing</li>
             <li>Planning</li>

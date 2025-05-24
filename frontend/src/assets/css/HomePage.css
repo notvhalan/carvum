@@ -1,14 +1,20 @@
+/* HomePage.css or your equivalent file */
+
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 /* Styling for the company text section */
 .company-text {
   position: absolute;
-  top: 15%; /* Center vertically */
-  left: 70%; /* Center horizontally */
+  top: 15%; /* Original: Center vertically based on this */
+  left: 70%; /* Original: Center horizontally based on this */
   transform: translate(-50%, -50%); /* Adjust position to exact center */
   color: #000; /* Black text color */
   text-align: center; /* Center align text */
+  opacity: 1; /* Fully visible by default - your JS handles scroll opacity */
+  width: 90%; /* Constrain width */
+  max-width: 700px; /* Max width for larger screens */
+  z-index: 5; /* Ensure it's below the navbar if they could overlap */
 }
 
 /* Styling for the title */
@@ -28,21 +34,57 @@
   margin: 0; /* Remove default margins */
 }
 
-/* Styling for the company text section */
-.company-text {
-    position: absolute;
-    top: 15%; /* Center vertically */
-    left: 70%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to exact center */
-    color: #000; /* Black text color */
-    text-align: center; /* Center align text */
-    opacity: 1; /* Fully visible by default */
+.planesketch {
+  height: 10%; /* This is relative to the parent .company-text. If .company-text has no explicit height, 10% can be very small or unpredictable. */
+  /* Consider using a fixed height or max-height in pixels or vh units for more predictable sizing. */
+  /* e.g., max-height: 80px; */
+  width: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
+  margin-bottom: 15px; /* Add some space below the sketch */
+}
+
+/* --- MOBILE ADJUSTMENTS for company-text --- */
+@media (max-width: 768px) {
+  .company-text {
+    /* Adjust top position to be below the new full-width navbar */
+    /* Assuming navbar height is around 50-70px on mobile after padding adjustments */
+    /* We change from fixed % to a calculation or a larger % if still absolute */
+    top: calc(15% + 60px); /* Push it down further from its original 15%, plus approx navbar height */
+    /* OR, if you want it to flow more naturally with page scroll (not fixed): */
+    /*
+    position: relative;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 80px;
+    padding-top: 20px;
+    */
+    width: 90%;
+    left: 50%; /* Ensure it's centered */
+    transform: translate(-50%, -50%); /* Keep vertical centering based on its 'top' */
   }
-  
+
+  .company-title {
+    font-size: 36px; /* Adjust title font size for mobile */
+  }
+
+  .company-description {
+    font-size: 16px; /* Adjust description font size for mobile */
+  }
+
   .planesketch {
-    height: 10%; /* Adjust to make it smaller */
-    width: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure it doesn't exceed the container width */
-    max-height: 100%; /* Prevent overflow */
+    max-height: 60px; /* Example adjustment */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .company-text {
+    top: calc(15% + 50px); /* Adjust if navbar is shorter on very small screens */
+  }
+  .company-title {
+    font-size: 28px;
+  }
+  .company-description {
+    font-size: 15px;
+  }
+}

@@ -1,72 +1,195 @@
 /* Navbar.css */
 .navbar {
-    position: fixed;
-    top: 15%;
-    right: 5%;
-    padding: 15px 25px;
-    border-radius: 10px; /* Smooth edges */
-    display: flex;
-    align-items: center;
-    z-index: 10; /* Ensure it stays above 3D content */
-  }
-  
-  .navbar ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar li {
-    position: relative; /* Necessary for dropdown positioning */
-    margin: 0 20px; /* Spacing between main menu items */
-    color: rgb(0, 0, 0);
-    font-size: 18px; /* Slightly larger font for readability */
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  .navbar li:hover {
-    color: #00bcd4; /* Highlight on hover */
-  }
-  
-  /* Dropdown menu */
-  .navbar .dropdown {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: calc(100% + 0px); /* Position slightly below the parent item */
+  position: fixed;
+  top: 15%;
+  right: 5%;
+  padding: 15px 25px;
+  border-radius: 10px; /* Smooth edges */
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative; /* Crucial for ::after positioning and dropdown */
+  margin: 0 20px;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* This pseudo-element bridges the visual gap to the dropdown */
+.navbar li::after {
+  content: '';
+  position: absolute;
+  left: 0; /* Align with the li's left edge */
+  right: 0; /* Make it full width of the li */
+  bottom: -8px; /* Extends 8px downwards from the bottom of the li's content box */
+  height: 8px;  /* Matches the visual gap created by the dropdown's top positioning */
+  /* For debugging, you can give it a subtle background: */
+  /* background-color: rgba(255, 0, 0, 0.1); */
+}
+
+.navbar li:hover {
+  color: #00bcd4;
+}
+
+/* Styling for the dropdown arrow */
+.navbar li .dropdown-arrow {
+  display: inline-block; /* Allows transform */
+  margin-left: 6px; /* Space between text and arrow */
+  font-size: 0.8em; /* Slightly smaller arrow */
+  transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+.navbar li:hover .dropdown-arrow {
+  transform: rotate(180deg); /* Rotate arrow when dropdown is shown */
+}
+
+/* Dropdown menu */
+.navbar .dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px); /* Visual gap of 8px below the li's content box */
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.97); /* Slightly more opaque background */
+  border: 1px solid #e0e0e0; /* Softer border color */
+  border-radius: 8px; /* Slightly smaller radius for a tighter look */
+  padding: 0; /* Remove container padding if items handle it fully */
+  list-style: none;
+  z-index: 1010;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease; /* Slightly faster transition */
+  min-width: 180px; /* Increased min-width for potentially longer items */
+  transform: translateY(5px); /* Initial offset, dropdown moves up on hover */
+  overflow: hidden; /* Ensures border-radius clips content if items have backgrounds */
+}
+
+/* Show dropdown on hover */
+.navbar li:hover .dropdown {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0); /* Animates to its final position */
+}
+
+/* Dropdown items */
+.navbar .dropdown li {
+  margin: 0;
+  padding: 0; /* Remove padding from li, apply to a/span inside */
+  color: rgba(0, 0, 0, 0.8); /* Consistent text color */
+  font-size: 16px;
+  transition: background-color 0.2s ease; /* Only background transition on li */
+  white-space: nowrap;
+}
+
+/* Style for actual clickable/text content within dropdown li (a or direct text) */
+.navbar .dropdown li > *,
+.navbar .dropdown li { /* Fallback if content is directly in li */
+  display: block; /* Make the entire area clickable */
+  padding: 10px 18px; /* Adjusted padding for items */
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit color from li */
+  transition: color 0.2s ease; /* Add color transition for text */
+}
+
+
+.navbar .dropdown li:not(:last-child) {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.navbar .dropdown li:hover {
+  background-color: #00bcd4;
+}
+
+/* Text color change on hover for content inside li */
+.navbar .dropdown li:hover > *,
+.navbar .dropdown li:hover {
+  color: white;
+}
+
+/* --- MOBILE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+  .navbar {
+    top: 0;
     left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.95); /* Adjusted for mobile */
+    justify-content: center;
+  }
 
-    color: rgba(0, 0, 0, 0.95); /* Darker background for dropdown */
-    border-radius: 10px;
-    padding: 10px 15px; /* Padding inside dropdown */
-    list-style: none;
-    z-index: 20;
-    opacity: 0; /* Start hidden */
-    pointer-events: none; /* Prevent interaction while hidden */
-    transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+  /* On mobile, the ::after pseudo-element might not be necessary
+     if hover interactions are less critical or behave differently.
+     However, keeping it doesn't harm if hover is still used.
+     If taps are the primary interaction, this problem is less relevant. */
+  .navbar li::after {
+      /* You might choose to hide it on mobile if hover is not the primary interaction method */
+      /* display: none; */
   }
-  
-  /* Show dropdown on hover */
-  .navbar li:hover .dropdown {
-    display: block;
-    opacity: 1; /* Fully visible */
-    pointer-events: auto; /* Enable interaction */
+
+
+  .navbar ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px 0;
   }
-  
-  /* Dropdown items */
+
+  .navbar li {
+    font-size: 16px;
+    margin: 0 10px;
+  }
+
+  /* Mobile Dropdown Positioning */
+  .navbar .dropdown {
+    min-width: 160px; /* Consistent min-width */
+    /* Default alignment for mobile dropdowns (mostly for left/center items) */
+    left: 0;
+    right: auto; /* Ensure 'right' doesn't interfere unless explicitly set */
+  }
+
+  /* For the last menu item's dropdown, align it to the right */
+  .navbar ul > li:last-child > .dropdown {
+    left: auto;
+    right: 0;
+  }
+
+  .navbar ul > li:nth-last-child(2) > .dropdown {
+    /* Uncomment and adjust if needed for the second to last item */
+    /*
+    left: auto;
+    right: 0;
+    */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar li {
+    font-size: 14px;
+    margin: 0 5px;
+  }
+  .navbar {
+    padding: 8px 10px;
+  }
+  .navbar .dropdown {
+    min-width: 140px; /* Further reduce min-width if necessary */
+  }
+  .navbar .dropdown li > *,
   .navbar .dropdown li {
-    margin: 5px 0;
-    padding: 5px 10px;
-
-    color: rgba(0, 0, 0, 0.95); /* Darker background for dropdown */
-    font-size: 16px; /* Smaller font for dropdown items */
-    border-radius: 5px; /* Slight rounding for hover effect */
-    transition: background-color 0.2s ease, color 0.2s ease;
+    padding: 8px 15px; /* Adjust padding for smaller screens */
   }
-  
-  .navbar .dropdown li:hover {
-    background-color: #00bcd4; /* Highlight dropdown item */
-    color: black; /* Contrast with background */
-  }
-  
+}

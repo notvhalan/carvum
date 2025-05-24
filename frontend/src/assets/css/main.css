@@ -1,29 +1,82 @@
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-/* Styling for the company text section */
+/* Styling for the company text section - Desktop */
 .company-text {
   position: absolute;
-  top: 15%; /* Center vertically */
-  left: 70%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust position to exact center */
-  color: #000; /* Black text color */
-  text-align: center; /* Center align text */
+  top: 15%;
+  /* For desktop, left: 70% and transform: translate(-50%, -50%)
+     positions the center of the element at 70% from the left.
+     If you want it more centered on desktop, consider left: 50%.
+     I'll keep your original left: 70% for desktop for now. */
+  left: 70%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  text-align: center;
+  width: 90%; /* Give it a responsive width */
+  max-width: 600px; /* Max width on larger screens */
+  z-index: 5; /* Ensure it's below navbar if they overlap */
 }
 
 /* Styling for the title */
 .company-title {
-  font-family: 'Playfair Display', serif; /* Primary font for titles */
-  font-size: 48px; /* Large font size for the heading */
-  font-weight: 700; /* Bold font weight */
-  margin-bottom: 20px; /* Spacing below the heading */
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 /* Styling for the description */
 .company-description {
-  font-family: 'Lato', sans-serif; /* Secondary font for body text */
-  font-size: 18px; /* Smaller font size for the paragraph */
-  font-weight: 400; /* Regular font weight */
-  line-height: 1.6; /* Better readability */
-  margin: 0; /* Remove default margins */
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- MOBILE ADJUSTMENTS for company-text --- */
+@media (max-width: 768px) {
+  .company-text {
+    /* On mobile, center it and position it below the fixed navbar */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Correct centering transform */
+    /* Adjust top to account for the mobile navbar.
+       Assuming mobile navbar height is around 60-70px.
+       This value might need fine-tuning. */
+    top: calc(15% + 70px); /* Adjust this 70px based on your mobile navbar's actual height */
+    /* If the above 'top' feels too high or unpredictable with percentages,
+       you can switch to a more direct top offset: */
+    /* top: 100px; */ /* Example: Fixed distance from the top of the viewport */
+    /* transform: translateX(-50%); */ /* If using fixed top, only horizontal transform needed */
+
+    width: 90%; /* Ensure it doesn't touch screen edges */
+    max-width: none; /* Remove desktop max-width if not desired for mobile flow */
+  }
+
+  .company-title {
+    font-size: 32px; /* Reduced font size for mobile */
+  }
+
+  .company-description {
+    font-size: 16px; /* Reduced font size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .company-text {
+    /* Further adjust 'top' if navbar height changes or more space is needed */
+    top: calc(15% + 60px); /* Example for very small screens */
+    /* Or fixed: */
+    /* top: 80px; */
+    /* transform: translateX(-50%); */
+  }
+
+  .company-title {
+    font-size: 28px;
+  }
+
+  .company-description {
+    font-size: 15px;
+  }
 }
