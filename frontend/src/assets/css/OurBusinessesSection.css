@@ -1,0 +1,127 @@
+/* src/assets/css/OurBusinessesSection.css */
+.businesses-section {
+  padding: 80px 20px;
+  background-color: none; /* Solid white background for the section */
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.businesses-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.businesses-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 60px; /* Increased margin for more space above the items */
+}
+
+.businesses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px; /* Increased gap for better separation without boxes */
+}
+
+.business-item {
+  /* Removed background, border-radius, and box-shadow to eliminate the "box" look */
+  text-align: left;
+  /* Padding can be kept to create space around content, or adjusted/removed if only relying on gap */
+  padding: 20px 0; /* Example: Vertical padding, no horizontal as gap handles that */
+  /* Flex properties can still be useful for internal alignment if desired,
+     but might be less critical without a visual box. */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; Removed as it might create too much space without card boundaries */
+}
+
+.business-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; /* Slightly larger for more prominence */
+  color: #2c3e50; /* A strong, readable dark color */
+  margin-bottom: 15px;
+}
+
+.business-item p {
+  font-family: 'Lato', sans-serif;
+  font-size: 17px; /* Slightly larger paragraph text */
+  line-height: 1.8; /* Increased line height for readability */
+  color: #555;
+  margin-bottom: 25px;
+  flex-grow: 1; /* Still useful if you want items in a row to have links somewhat aligned if content heights differ */
+}
+
+/* src/assets/css/OurBusinessesSection.css */
+/* ... other styles above ... */
+
+.business-link {
+  font-family: 'Lato', sans-serif;
+  display: inline-block;
+  background-color: #00bcd4;
+  color: white;
+  padding: 10px 22px; /* Slightly adjust padding to account for border thickness */
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease; /* Added color and border-color to transition */
+  align-self: flex-start;
+  margin-top: auto;
+
+  /* --- Border Styles --- */
+  border-width: 2px;
+  border-style: solid; /* Added border style */
+  border-color: #000000; /* Set to black */
+}
+
+.business-link:hover {
+  background-color: #00a1b6;
+  border-color: #007c8a; /* Darker border color on hover for consistency */
+  color: white; /* Ensure text remains white */
+  transform: translateY(-2px);
+}
+
+.business-link.coming-soon {
+  background-color: transparent;
+  color: #777;
+  padding: 10px 0; /* Keep padding for non-button look or adjust if border is desired */
+  font-weight: normal;
+  font-style: italic;
+  text-decoration: none;
+  align-self: flex-start;
+  margin-top: auto;
+
+  /* Apply border to coming-soon if desired, or override to none */
+  border-width: 2px;
+  border-style: solid;
+  border-color: #aaaaaa; /* Lighter grey border for "coming soon" to make it less prominent */
+}
+
+.business-link.coming-soon:hover {
+  background-color: transparent;
+  transform: none;
+  color: #555;
+  border-color: #888888; /* Slightly darker grey border on hover */
+}
+
+/* ... other styles below ... */
+/* Add some separation between items when they stack on smaller screens, if needed */
+@media (max-width: 640px) { /* Adjust breakpoint where grid might become 1 column */
+  .businesses-grid {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 40px; /* Vertical gap for single column */
+  }
+  .business-item {
+    padding: 15px 0; /* Adjust padding for single column view */
+  }
+  .business-item:last-child {
+    border-bottom: none; /* Remove border from the last item */
+  }
+  .business-item h3 {
+    font-size: 24px;
+  }
+  .business-item p {
+    font-size: 16px;
+  }
+}

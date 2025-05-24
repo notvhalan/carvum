@@ -1,0 +1,71 @@
+/* src/assets/css/ContactSection.css */
+.contact-section {
+    padding: 80px 20px;
+    background-color: rgba(50, 50, 50, 1); /* Darker background for contrast */
+    color: #f0f0f0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .contact-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .contact-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .contact-section .contact-subtext {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    color: #ccc;
+  }
+  
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .contact-form input[type="text"]::placeholder,
+  .contact-form input[type="email"]::placeholder,
+  .contact-form textarea::placeholder {
+    color: #bbb;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+  }
+  
+  .contact-form .submit-btn {
+    font-family: 'Lato', sans-serif;
+    background-color: #00bcd4; /* Using your navbar hover color */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form .submit-btn:hover {
+    background-color: #00a1b6; /* Darker shade */
+  }

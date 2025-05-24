@@ -1,0 +1,59 @@
+/* src/assets/css/AboutSection.css */
+.about-section {
+    padding: 80px 20px;
+    background-color: rgba(245, 245, 245, 1); /* Different subtle background */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .about-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .about-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-section .about-intro {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .about-content {
+    text-align: left; /* Align mission/vision text to the left */
+  }
+  
+  .about-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #444;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .about-content p {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Optional: if you add an image
+  .about-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 30px;
+  }
+  */

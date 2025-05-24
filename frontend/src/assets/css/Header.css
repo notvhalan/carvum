@@ -1,12 +1,22 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* This might be redundant if header-content is 100% width */
+  justify-content: space-between;
   padding: 16px 24px;
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */ /* Replaced with border-top */
+  border-top: 1px solid #ddd;         /* More suitable for a bottom bar */
   background-color: #fff;
   font-family: Arial, sans-serif;
-  box-sizing: border-box; /* Good practice for layout */
+  box-sizing: border-box;
+
+  /* --- New/Modified properties for bottom positioning --- */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; /* This makes it span the full width */
+  /* Alternatively, you could use width: 100%; instead of left: 0; right: 0; */
+  z-index: 990; /* Ensure it's above most page content, adjust as needed
+                   relative to other fixed elements like your top navbar. */
 }
 
 .header-content {
@@ -52,53 +62,47 @@
 
 
 /* --- MOBILE ADJUSTMENTS --- */
+/* These existing mobile adjustments will still apply to the content *within*
+   the header, which is now fixed at the bottom. */
 @media (max-width: 768px) {
   .header {
     padding: 12px 16px; /* Reduced padding for mobile */
   }
 
   .logo {
-    height: 2.5rem; /* Smaller logo for mobile (e.g., 40px if 1rem=16px) */
+    height: 2.5rem; /* Smaller logo for mobile */
     margin-right: 12px; /* Slightly reduced margin */
   }
 
   .text-links {
-    /* If title and links should stack on mobile: */
-    /* flex-direction: column; */
-    /* align-items: flex-start; */ /* Or 'center' if preferred */
-
-    /* If they should attempt to stay in a row but wrap: */
     flex-wrap: wrap;
-    justify-content: flex-start; /* Or 'center' if you prefer items to be centered when wrapped */
-    gap: 8px; /* Adds space between wrapped items/lines */
+    justify-content: flex-start; /* Or 'center' */
+    gap: 8px;
   }
 
   .title {
-    font-size: 15px; /* Slightly smaller title */
-    margin-right: 0; /* Reset margin if using gap or stacking */
+    font-size: 15px;
+    margin-right: 0;
   }
 
   .link {
-    font-size: 15px; /* Slightly smaller links */
-    margin-left: 0; /* Reset margin if using gap or stacking */
-    /* If you have many links and they still cause issues,
-       you might need to specifically target a group of links
-       if they are not direct children of .text-links */
+    font-size: 15px;
+    margin-left: 0;
   }
 }
 
 @media (max-width: 480px) {
   .header {
-    padding: 8px 12px; /* Even less padding for very small screens */
+    padding: 8px 12px; /* Even less padding */
   }
 
   .logo {
-    height: 2rem; /* Even smaller logo (e.g., 32px) */
+    height: 2rem; /* Even smaller logo */
     margin-right: 8px;
   }
 
   .text-links {
-    gap: 6px; /* Adjust gap for smaller screens */
+    gap: 6px;
   }
 
   .title {
