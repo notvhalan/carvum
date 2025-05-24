@@ -39,3 +39,10 @@
     opacity: 1; /* Fully visible by default */
   }
   
+  .planesketch {
+    height: 10%; /* Adjust to make it smaller */
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    max-height: 100%; /* Prevent overflow */
+  }
+  

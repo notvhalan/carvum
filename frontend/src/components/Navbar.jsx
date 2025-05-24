@@ -9,9 +9,17 @@ const Navbar = () => {
         <li>
           Solutions <span>▼</span>
           <ul className="dropdown">
-            <li>Neram</li>
+            <li>
+              <a href="https://neram.live" target="_blank" rel="noopener noreferrer">
+                Neram
+              </a>
+            </li>
             <li>Gamefix</li>
-            <li>Bibliotec</li>
+            <li>
+              <a href="https://bibliotec.site" target="_blank" rel="noopener noreferrer">
+                Bibliotec
+              </a>
+            </li>
           </ul>
         </li>
         <li>

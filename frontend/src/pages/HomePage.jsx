@@ -29,8 +29,8 @@ const HomePage = () => {
 
       // Load the initial model
       loadModel(jetsketch1Path, (model) => {
-        model.position.set(0, -10, -60);
-        model.scale.set(4, 4, 4);
+        model.position.set(20, -10, -60);
+        model.scale.set(3, 3, 3);
         animate(model)
       });
 
@@ -80,6 +80,8 @@ const HomePage = () => {
 
       {/* "We Are A Company" Section */}
       <div className="company-text">
+      <img className='planesketch' src="./src/assets/images/planesketch3.png" alt="Company Logo" />
+
         <h1 className="company-title">We Are A Company</h1>
         <p className="company-description">
           Dedicated to innovative solutions and exceptional service.
