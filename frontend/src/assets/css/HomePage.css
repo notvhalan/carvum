@@ -1,95 +1,210 @@
-/* HomePage.css or your equivalent file */
+/* src/assets/css/HomePage.css */
 
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+/* Ensure body and html are full height for hero section */
+html, body, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Base container for the whole page to handle scrolling */
+.homepage-scroll-container {
+    height: auto;
+    position: relative;
+}
+
+/* NEW: Wrapper for all content sections to ensure they stack above the video */
+.content-section-wrapper {
+    position: relative; /* Crucial for z-index to work */
+    z-index: 1; /* Make sure all content is above the video (which will be z-index: 0 or -1) */
+    /* Add any other general styling for content sections here if needed */
+}
+
+
+/* Three.js 3D Container */
+#three-js-bg-container {
+    /* ... (styles) ... */
+    z-index: -1; /* Furthest back */
+}
+
+/* --- Bouncing Video Specific Styles --- */
+.bouncing-video-container {
+    /* ... (styles like border-radius, box-shadow, position: fixed) ... */
+    z-index: 0; /* Behind the content wrapper (z-index: 1) but above Three.js background (z-index: -1) */
+}
+
+/* Three.js 3D Container */
+#three-js-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Remains behind everything */
+}
+
+/* --- Bouncing Video Specific Styles --- */
+.bouncing-video-container {
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: inline-block; /* Allows content-based width */
+    position: fixed; /* Keep it fixed relative to viewport */
+    /* 'top' and 'left' properties are now dynamically controlled by React state */
+    z-index: 0; /* Make it behind all content (which will have z-index: 1) */
+    cursor: default; /* No dragging, so default cursor */
+    user-select: none; /* Prevent text selection */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.responsive-video {
+    width: 400px; /* Default desktop width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Removes extra space below video */
+}
+
+/* Media queries for responsive video sizing */
+@media (max-width: 1200px) {
+    .responsive-video {
+        width: 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .responsive-video {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) { /* Tablet and larger phone screens */
+    .responsive-video {
+        width: 70vw; /* Takes 70% of viewport width */
+        max-width: 250px; /* Cap width even with vw */
+    }
+}
+
+@media (max-width: 480px) { /* Small phone screens */
+    .responsive-video {
+        width: 85vw; /* Larger on very small screens */
+        max-width: 200px; /* Cap width */
+    }
+}
+
+
+/* Hero Section Styles */
+.hero-section {
+    height: 100vh; /* Takes full viewport height */
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    position: relative; /* Needed for absolute positioning of company-text, and for z-index */
+    overflow: hidden; /* Hide anything that spills out */
+    /* z-index is inherited from .content-section-wrapper if not explicitly set */
+}
+
 /* Styling for the company text section - DESKTOP */
 .company-text {
-  position: absolute;
-  /* Removed top-based positioning */
-  /* top: 15%; */
-  /* left: 70%; */
-  /* transform: translate(-50%, -50%); */
-
-  /* New bottom-anchored and horizontally centered positioning for DESKTOP */
-  bottom: 15vh; /* Position 15% of viewport height from the bottom. Adjust as needed (e.g., 10vh, 80px) */
-  left: 70%;
-  transform: translateX(-50%); /* Only horizontal centering needed with bottom anchor */
-  top: auto; /* Ensure any inherited 'top' is overridden */
-
-  color: #000;
-  text-align: center;
-  opacity: 1; /* JS handles scroll opacity */
-  width: 90%; /* Constrain width */
-  max-width: 700px; /* Max width on larger screens */
-  z-index: 5;
+    position: absolute;
+    bottom: 15vh; /* Position 15% of viewport height from the bottom */
+    left: 70%;
+    transform: translateX(-50%); /* Horizontally center relative to 'left' */
+    color: #000;
+    text-align: center;
+    opacity: 1; /* JS handles scroll opacity */
+    width: 90%; /* Constrain width */
+    max-width: 700px; /* Max width on larger screens */
+    z-index: 5; /* Remains above other elements within hero section */
+    padding: 0 20px; /* Add some padding to prevent text from touching edges on smaller screens */
+    box-sizing: border-box; /* Include padding in element's total width/height */
 }
 
 /* Styling for the title */
 .company-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5vw; /* Responsive font size */
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #333; /* Slightly softer black */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle text shadow */
 }
 
 /* Styling for the description */
 .company-description {
-  font-family: 'Lato', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.6;
-  margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5vw; /* Responsive font size */
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0 auto; /* Center the paragraph if it has a max-width */
+    max-width: 600px; /* Limit description width for readability */
+    color: #555; /* Softer text color */
 }
 
 .planesketch {
-  height: 10%; /* Relative to .company-text height */
-  width: auto;
-  max-width: 100%; /* Ensure it doesn't exceed .company-text width */
-  /* max-height can be added if you want to cap its pixel height on desktop too */
-  /* e.g., max-height: 100px; */
-  margin-bottom: 15px;
+    height: auto; /* Maintain aspect ratio */
+    width: 10vw; /* Responsive width relative to viewport */
+    max-width: 100px; /* Cap its max pixel width */
+    margin-bottom: 15px;
+    display: block; /* Ensures it behaves like a block element for margin auto */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* --- MOBILE ADJUSTMENTS for company-text --- */
+/* --- Responsive Adjustments for Company Text --- */
+@media (max-width: 1024px) {
+    .company-title {
+        font-size: 40px;
+    }
+    .company-description {
+        font-size: 17px;
+    }
+}
+
 @media (max-width: 768px) {
-  .company-text {
-    /* 'position: absolute', 'width', 'left', 'transform', 'text-align', 'opacity', 'z-index' are inherited or set */
-    top: auto; /* Ensure desktop 'top' is overridden if it was different */
-    bottom: 10vh; /* Position 5% of viewport height from the bottom for mobile */
-    /* left: 50%; and transform: translateX(-50%); are now consistent with desktop */
-    left: 50%;
-
-    max-width: 100%; /* Allow it to be wider relative to small screens if needed */
-  }
-
-  .company-title {
-    font-size: 32px;
-  }
-
-  .company-description {
-    font-size: 16px;
-  }
-
-  .planesketch {
-    max-height: 80px;
-  }
+    .company-text {
+        bottom: 8vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: none;
+    }
+    .company-title {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    .company-description {
+        font-size: 15px;
+        line-height: 1.5;
+        max-width: 90%;
+    }
+    .planesketch {
+        width: 15vw;
+        max-width: 80px;
+        margin-bottom: 10px;
+    }
 }
 
 @media (max-width: 480px) {
-  .company-text {
-    bottom: 8vh; /* Slightly less space from bottom for very small screens */
-  }
-
-  .company-title {
-    font-size: 26px;
-  }
-
-  .company-description {
-    font-size: 14px;
-  }
-
-  .planesketch {
-    max-height: 60px;
-  }
+    .company-text {
+        bottom: 5vh;
+        padding: 0 15px;
+    }
+    .company-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .company-description {
+        font-size: 14px;
+    }
+    .planesketch {
+        width: 20vw;
+        max-width: 60px;
+    }
 }

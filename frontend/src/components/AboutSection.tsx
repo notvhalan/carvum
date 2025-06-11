@@ -8,8 +8,8 @@ const AboutSection = () => {
       <div className="container">
         <h2>About Our Company</h2>
         <p className="about-intro">
-          We are a team of passionate individuals dedicated to crafting innovative solutions
-          that drive success and inspire change. Learn more about our journey, values, and
+          A team dedicated to crafting innovative solutions
+          that drive success and inspire change. <br></br> Learn more about our journey, values, and
           the people behind our work.
         </p>
         <div className="about-content">
