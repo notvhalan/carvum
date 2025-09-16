@@ -1,0 +1,171 @@
+/* src/assets/css/OurAppsSection.css */
+
+.apps-section {
+  padding: 80px 20px;
+  background-color: none; /* Light Apple-like background */
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.apps-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.apps-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #1d1d1f; /* Apple's dark text color */
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.apps-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 50px;
+}
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 22px; /* Apple's rounded corners */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 24px 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.app-card:hover {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.app-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 18px; /* Apple's app icon radius */
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-card h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: #1d1d1f;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.app-card p {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #86868b; /* Apple's secondary text color */
+  margin: 0;
+  font-weight: 400;
+}
+
+/* View All Apps Link */
+.view-all-apps {
+  margin-top: 40px;
+}
+
+.view-all-link {
+  font-family: 'Lato', sans-serif;
+  display: inline-block;
+  background-color: #007aff; /* Apple blue */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.view-all-link:hover {
+  background-color: #0056cc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 122, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .apps-section {
+    padding: 60px 20px;
+  }
+  
+  .apps-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  .apps-grid {
+    gap: 24px;
+  }
+  
+  .app-card {
+    width: 160px;
+    padding: 20px 16px;
+  }
+  
+  .app-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+  }
+  
+  .app-card h3 {
+    font-size: 16px;
+  }
+  
+  .app-card p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .apps-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .app-card {
+    width: 140px;
+    padding: 18px 14px;
+  }
+  
+  .app-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+  }
+  
+  .app-card h3 {
+    font-size: 15px;
+  }
+  
+  .view-all-link {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+/* Large screens - show apps in a single row if space allows */
+@media (min-width: 1200px) {
+  .apps-grid {
+    justify-content: space-evenly;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+  }
+}

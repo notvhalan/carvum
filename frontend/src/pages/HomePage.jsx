@@ -9,6 +9,7 @@ import { addBackgroundElements } from '../three/bgtext.js';
 
 import Navbar from '../components/Navbar';
 import OurBusinessesSection from '../components/OurBusinessesSection';
+import OurAppsSection from '../components/OurAppsSection';
 import AboutSection from '../components/AboutSection';
 import ContactSection from '../components/ContactSection';
 import bibsu4 from '/videos/bibsu4.mp4';
@@ -137,6 +138,7 @@ const HomePage = () => {
                 </div>
 
                 <OurBusinessesSection />
+                <OurAppsSection />
                 <AboutSection />
                 <ContactSection />
             </div>

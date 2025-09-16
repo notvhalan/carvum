@@ -50,7 +50,7 @@ const OurBusinessesSection: React.FC = () => {
               Our exciting new venture into the gaming world. Stay tuned, Gamefix is
               coming soon!
             </p>
-            <span className="business-link coming-soon">(Patience Soon)</span>
+            <span className="business-link coming-soon">(Coming Soon)</span>
             {/* Or, if you prefer a disabled-looking link:
             <a href="#" className="business-link disabled" onClick={(e) => e.preventDefault()}>
               Coming Soon
