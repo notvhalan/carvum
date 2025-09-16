@@ -2,7 +2,7 @@
 import React from 'react';
 import '../assets/css/ContactSection.css';
 
-const ContactSection: React.FC = () => { // Added React.FC for functional component typing
+const ContactSection: React.FC = () => { // Added React.FC for functional component typing 
   return (
     <section id="contact" className="contact-section">
       <div className="container">
@@ -24,3 +24,5 @@ const ContactSection: React.FC = () => { // Added React.FC for functional compon
 };
 
 export default ContactSection;
+
+// ts-ignore
