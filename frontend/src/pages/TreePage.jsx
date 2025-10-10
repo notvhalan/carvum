@@ -10,22 +10,32 @@ const TreePage = () => {
     {
       title: 'Instagram',
       url: 'https://www.instagram.com/amusementsgroundsstagnating',
-      icon: '📸'
+      icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg',
+      color: '#E4405F'
     },
     {
       title: 'YouTube',
       url: 'https://www.youtube.com/@vhalan',
-      icon: '🎥'
+      icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg',
+      color: '#FF0000'
     },
     {
       title: 'LinkedIn',
       url: 'https://www.linkedin.com/in/vhalaniscool?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-      icon: '💼'
+      icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg',
+      color: '#0A66C2'
+    },
+    {
+      title: 'GitHub',
+      url: 'https://github.com/notvhalan',
+      icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg',
+      color: '#FFFFFF'
     },
     {
       title: 'Personal Website',
       url: 'http://carvum.life',
-      icon: '🌐'
+      icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/internetexplorer.svg',
+      color: '#0078D4'
     }
   ];
 
@@ -80,7 +90,12 @@ const TreePage = () => {
                 debug={false}
               >
                 <div className="link-content">
-                  <span className="link-icon">{link.icon}</span>
+                  <img 
+                    src={link.icon} 
+                    alt={`${link.title} icon`} 
+                    className="link-icon-svg"
+                    style={{ filter: `brightness(0) saturate(100%) invert(1)` }}
+                  />
                   <span className="link-title">{link.title}</span>
                   <span className="link-arrow">→</span>
                 </div>

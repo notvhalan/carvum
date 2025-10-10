@@ -165,6 +165,13 @@
   align-items: center;
 }
 
+.link-icon-svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
 .link-title {
   flex: 1;
   text-align: left;
@@ -240,6 +247,12 @@
     font-size: 22px;
     margin-right: 14px;
   }
+
+  .link-icon-svg {
+    width: 22px;
+    height: 22px;
+    margin-right: 14px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -283,6 +296,12 @@
 
   .link-icon {
     font-size: 20px;
+    margin-right: 12px;
+  }
+
+  .link-icon-svg {
+    width: 20px;
+    height: 20px;
     margin-right: 12px;
   }
 
