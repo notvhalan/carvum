@@ -3,6 +3,7 @@ import React from 'react';
 import { GlassElement } from '../GlassElement/GlassElement';
 import '../assets/css/TreePage.css';
 import amgVideo from '../assets/videos/amg.mp4';
+import avatarImage from '../assets/images/avt.png';
 
 const TreePage = () => {
   const links = [
@@ -48,11 +49,14 @@ const TreePage = () => {
       <div className="tree-container">
         {/* Profile Section */}
         <div className="profile-section">
-          <div className="profile-avatar">
-            <span className="avatar-text">V</span>
-          </div>
-          <h1 className="profile-name">vhalan</h1>
-          <p className="profile-bio">Pls download stuff :)</p>
+
+            <div className="profile-content">
+              <div className="profile-avatar">
+                <img src={avatarImage} alt="vhalan" className="avatar-image" />
+              </div>
+              <h1 className="profile-name">vhalan</h1>
+              <p className="profile-bio">creating world changing technology</p>
+            </div>
         </div>
 
         {/* Links Section */}
