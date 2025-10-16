@@ -1,0 +1,264 @@
+/* Privacy Policy Page Styles */
+.privacy-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+.privacy-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* Header */
+.privacy-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.privacy-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 15px 0;
+  font-weight: bold;
+}
+
+.effective-date {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.app-info {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-top: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.app-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+/* Content */
+.privacy-content {
+  padding: 50px 40px;
+  color: #333;
+  line-height: 1.8;
+}
+
+.privacy-section {
+  margin-bottom: 40px;
+}
+
+.privacy-section:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-section h2 {
+  font-size: 1.8rem;
+  color: #667eea;
+  margin: 0 0 20px 0;
+  font-weight: bold;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 10px;
+}
+
+.privacy-section h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 25px 0 15px 0;
+  font-weight: 600;
+}
+
+.privacy-section p {
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+.privacy-section ul {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+.privacy-section li {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+.privacy-section strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.privacy-section em {
+  font-style: italic;
+  color: #667eea;
+}
+
+.privacy-section a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.privacy-section a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* Contact Info */
+.contact-info {
+  background: #f5f7fa;
+  border-left: 4px solid #667eea;
+  padding: 20px 25px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.contact-info p {
+  margin: 8px 0;
+}
+
+/* Disclaimer Section */
+.disclaimer {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  border-radius: 15px;
+  padding: 30px;
+  border: 2px solid #f39c12;
+  margin-top: 50px;
+}
+
+.disclaimer h2 {
+  color: #d68910;
+  border-bottom: 3px solid #f39c12;
+}
+
+.disclaimer-text {
+  color: #856404;
+  font-size: 1.1rem;
+  margin-top: 15px;
+}
+
+/* Footer */
+.privacy-footer {
+  background: #f5f7fa;
+  padding: 30px 40px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.privacy-footer p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .privacy-page {
+    padding: 20px 10px;
+  }
+
+  .privacy-header {
+    padding: 40px 25px;
+  }
+
+  .privacy-header h1 {
+    font-size: 2rem;
+  }
+
+  .privacy-content {
+    padding: 40px 25px;
+  }
+
+  .privacy-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .privacy-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .privacy-section p,
+  .privacy-section li {
+    font-size: 1rem;
+  }
+
+  .privacy-footer {
+    padding: 25px 20px;
+  }
+
+  .disclaimer {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .privacy-content {
+    padding: 30px 20px;
+  }
+
+  .privacy-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .privacy-section ul {
+    padding-left: 20px;
+  }
+
+  .contact-info {
+    padding: 15px 20px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .privacy-page {
+    background: white;
+    padding: 0;
+  }
+
+  .privacy-container {
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .privacy-header {
+    background: none;
+    color: black;
+    border-bottom: 2px solid #333;
+  }
+
+  .privacy-section h2 {
+    color: black;
+  }
+
+  .disclaimer {
+    background: white;
+    border: 2px solid #333;
+  }
+
+  .disclaimer h2 {
+    color: black;
+  }
+
+  .disclaimer-text {
+    color: black;
+  }
+}
