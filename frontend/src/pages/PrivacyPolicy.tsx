@@ -7,227 +7,182 @@ const PrivacyPolicy: React.FC = () => {
     <div className="privacy-page">
       <div className="privacy-container">
         <header className="privacy-header">
-          <h1>Blackjack Bible – Privacy Policy</h1>
-          <p className="effective-date">Effective date: October 16, 2025</p>
+          <h1>CardCounter Privacy Policy</h1>
+          <p className="effective-date">Last Updated: October 30, 2025</p>
           <div className="app-info">
-            <p><strong>Developer:</strong> Carvum Ltd</p>
-            <p><strong>App:</strong> Blackjack Bible – Card Counter Trainer</p>
+            <p><strong>Developer:</strong> Carvum Limited</p>
+            <p><strong>App:</strong> CardCounter – Educational Training Tool</p>
+            <p><strong>Version:</strong> 1.0</p>
           </div>
         </header>
 
         <main className="privacy-content">
           <section className="privacy-section">
-            <h2>1. Overview</h2>
-            <p>
-              Blackjack Bible is an educational mobile application that helps users improve their blackjack card-counting 
-              and decision-making skills through simulations, drills, and analytics.
-            </p>
-            <p>
-              We value your privacy and are committed to protecting your personal data. This policy explains what 
-              information the app collects, how it is used, and your choices.
+            <p className="intro-text">
+              Carvum Limited ("we," "our," "us") respects your privacy. This policy explains how the 
+              <strong> CardCounter</strong> app collects, uses, and protects information. CardCounter is an 
+              educational training tool focused on probabilistic thinking and pattern recognition. It does 
+              <strong> not</strong> involve gambling or real-money play.
             </p>
           </section>
 
           <section className="privacy-section">
-            <h2>2. Information We Collect</h2>
+            <h2>1. Information We Collect</h2>
             
-            <h3>a. Information You Provide</h3>
-            <p>
-              Blackjack Bible requires account creation using <strong>Sign in with Apple</strong>. When you sign in, 
-              we receive:
-            </p>
+            <h3>Guest Mode</h3>
             <ul>
-              <li>A unique Apple user identifier (not your Apple ID)</li>
-              <li>Your email address (or Apple's private relay email if you choose to hide your email)</li>
-              <li>Your display name (optional, if you choose to share it)</li>
+              <li>No personal data is collected or transmitted.</li>
+              <li>All progress (XP, coins, themes, streaks, drills) is stored <strong>locally on your device</strong> using Apple Core Data.</li>
+              <li>We do <strong>not</strong> access, transmit, or back up guest data.</li>
             </ul>
+
+            <h3>Authenticated Mode</h3>
+            <p>If you choose to <strong>Sign in with Apple</strong>, we receive:</p>
+            <ul>
+              <li>An anonymized Apple ID identifier (no password or email shared unless you consent).</li>
+              <li>Basic profile data you create (username, region, optional bio).</li>
+            </ul>
+            <p>We use <strong>AWS Amplify</strong> (Cognito, AppSync, DynamoDB) to sync:</p>
+            <ul>
+              <li>Training progress, purchased themes, subscription status, and profile statistics.</li>
+              <li>Data is encrypted in transit (HTTPS/TLS) and at rest (AWS-managed encryption).</li>
+            </ul>
+
+            <h3>Subscription Data</h3>
             <p>
-              We use <strong>AWS Amplify and Amazon Cognito</strong> to securely manage authentication and user accounts. 
-              Apple handles the authentication process, and we never see your Apple ID password.
+              Purchases are handled entirely by <strong>Apple StoreKit 2</strong>. We do <strong>not</strong> collect 
+              or store your payment information. Apple provides us only with anonymous transaction identifiers needed 
+              to confirm your active subscription.
             </p>
 
-            <h3>b. Automatically Collected Information</h3>
+            <h3>Analytics & Tracking</h3>
             <p>
-              Blackjack Bible stores your usage data securely in the cloud via <strong>AWS (Amazon Web Services)</strong>, including:
-            </p>
-            <ul>
-              <li>Training progress, session scores, and performance statistics</li>
-              <li>Simulation settings and user preferences</li>
-              <li>Game history and achievement data</li>
-              <li>Device information (device type, OS version) for compatibility purposes</li>
-            </ul>
-            <p>
-              This data is encrypted in transit and at rest, and is associated with your Apple user identifier.
-            </p>
-
-            <h3>c. Subscription Purchases</h3>
-            <p>
-              If you subscribe to <em>Blackjack Bible Pro</em>, Apple handles all payment and subscription processing 
-              through <strong>App Store Connect / StoreKit</strong>.
-            </p>
-            <p>
-              We do not receive or store your payment details. Apple provides us with anonymized transaction 
-              status information only (e.g., active, expired), which we link to your account to enable premium features.
+              CardCounter contains <strong>no third-party analytics, advertising SDKs, or trackers</strong>. 
+              We do not share data with external parties.
             </p>
           </section>
 
           <section className="privacy-section">
-            <h2>3. How We Use Data</h2>
-            <p>Your data is used only to:</p>
+            <h2>2. How We Use Your Information</h2>
             <ul>
-              <li>Authenticate your account and maintain your user session</li>
-              <li>Sync your training progress, scores, and preferences across devices</li>
-              <li>Provide personalized analytics and performance tracking</li>
-              <li>Enable premium features for subscribers</li>
-              <li>Improve app functionality and user experience</li>
-              <li>Send important account and service updates (if you opt in)</li>
-            </ul>
-            <p>
-              We do not share, sell, or transfer your personal data to any third parties for marketing or advertising purposes.
-            </p>
-          </section>
-
-          <section className="privacy-section">
-            <h2>4. Data Storage and Security</h2>
-            <ul>
-              <li>Your data is stored securely in <strong>AWS (Amazon Web Services)</strong> cloud infrastructure, which complies with industry-standard security practices.</li>
-              <li>All data is <strong>encrypted in transit</strong> (using HTTPS/TLS) and <strong>at rest</strong> (using AWS encryption).</li>
-              <li>Authentication is managed by <strong>AWS Cognito</strong> with <strong>Sign in with Apple</strong>, providing enterprise-grade security.</li>
-              <li>We implement access controls to ensure only authorized personnel can access backend systems.</li>
-              <li>AWS data centers are located in secure facilities with redundant backups.</li>
-              <li>If you delete your account, your personal data and progress will be permanently removed from our servers within 30 days.</li>
+              <li>To store and display your training progress.</li>
+              <li>To enable cross-device sync for authenticated users.</li>
+              <li>To validate premium membership and restore purchases.</li>
+              <li>To provide optional cloud backup and technical support.</li>
             </ul>
           </section>
 
           <section className="privacy-section">
-            <h2>5. Third-Party Services</h2>
-            <p>
-              Blackjack Bible uses the following trusted third-party services:
-            </p>
-            
-            <h3>Apple Sign In</h3>
+            <h2>3. Data Retention</h2>
             <ul>
-              <li>Handles secure authentication</li>
-              <li>Subject to Apple's Privacy Policy</li>
-              <li>We receive only limited information (user ID, email, optional name)</li>
-            </ul>
-
-            <h3>AWS (Amazon Web Services)</h3>
-            <ul>
-              <li><strong>AWS Amplify & Cognito:</strong> User authentication and account management</li>
-              <li><strong>AWS Cloud Storage:</strong> Secure storage of user data and progress</li>
-              <li>AWS complies with SOC, ISO, and other security certifications</li>
-              <li>Data is stored in AWS regions with high availability and security</li>
-            </ul>
-
-            <h3>Analytics</h3>
-            <p>
-              We may use <strong>Apple's built-in analytics</strong> (App Analytics in App Store Connect) 
-              to measure aggregate performance such as downloads, crashes, and retention — these reports 
-              are anonymized and aggregated by Apple.
-            </p>
-            <p>
-              We do <strong>not</strong> use third-party advertising SDKs (e.g., Google Analytics, Facebook SDKs, or ad networks).
-            </p>
-          </section>
-
-          <section className="privacy-section">
-            <h2>6. Your Rights</h2>
-            <p>You have the following rights regarding your data:</p>
-            <ul>
-              <li><strong>Access:</strong> Request a copy of your personal data stored in our systems by contacting us.</li>
-              <li><strong>Correction:</strong> Update your account information within the app settings.</li>
-              <li><strong>Deletion:</strong> Delete your account and all associated data through the app settings or by contacting us. Data will be permanently removed within 30 days.</li>
-              <li><strong>Data Portability:</strong> Request an export of your training data and statistics.</li>
-              <li><strong>Revoke Sign in with Apple:</strong> Manage or revoke access through <strong>iOS Settings → Apple ID → Sign in with Apple</strong>.</li>
-              <li><strong>Manage Subscriptions:</strong> Cancel or modify subscriptions via <strong>App Store → Account → Subscriptions</strong>.</li>
-              <li><strong>Opt-out of Analytics:</strong> Disable through <strong>iOS Settings → Privacy → Analytics & Improvements</strong>.</li>
-            </ul>
-            <p>
-              To exercise any of these rights, please contact us at <a href="mailto:vhalanappstore@icloud.com">vhalanappstore@icloud.com</a>.
-            </p>
-          </section>
-
-          <section className="privacy-section">
-            <h2>7. Data Retention</h2>
-            <p>
-              We retain your data for as long as your account is active or as needed to provide services. Specifically:
-            </p>
-            <ul>
-              <li><strong>Account data:</strong> Retained until you delete your account</li>
-              <li><strong>Training progress:</strong> Retained to enable cross-device sync and historical analytics</li>
-              <li><strong>Subscription data:</strong> Retained while subscription is active, plus required retention period for financial records</li>
-              <li><strong>Deleted accounts:</strong> All personal data permanently deleted within 30 days of account deletion</li>
+              <li><strong>Guest data</strong> remains only on your device and is deleted if you uninstall the app.</li>
+              <li><strong>Cloud data</strong> remains until you delete your account or request erasure.</li>
+              <li>You may delete your cloud profile anytime through the in-app "Delete Account" option.</li>
             </ul>
           </section>
 
           <section className="privacy-section">
-            <h2>8. Children's Privacy</h2>
-            <p>
-              Blackjack Bible is designed for adult users (18+) as an educational simulator for casino 
-              mathematics and probability. We do not knowingly collect data from children under 13 (or applicable age in your region).
-            </p>
-            <p>
-              If we discover that a child under the applicable age has created an account, we will promptly delete 
-              that account and all associated data.
-            </p>
-          </section>
-
-          <section className="privacy-section">
-            <h2>9. International Data Transfers</h2>
-            <p>
-              Your data may be transferred to and stored on servers located outside your country of residence. 
-              AWS operates data centers globally, and your data may be processed in regions where AWS services are available.
-            </p>
-            <p>
-              By using Blackjack Bible, you consent to the transfer of your data to these locations. 
-              We ensure that all data transfers comply with applicable data protection laws and that appropriate 
-              safeguards are in place.
-            </p>
-          </section>
-
-          <section className="privacy-section">
-            <h2>10. Changes to This Policy</h2>
-            <p>
-              We may update this Privacy Policy from time to time to reflect changes in our practices, 
-              technology, legal requirements, or other factors. When we do:
-            </p>
+            <h2>4. Your Rights</h2>
+            <p>You may:</p>
             <ul>
-              <li>The updated version will be posted in-app and on our website</li>
-              <li>The "Effective date" at the top will be updated</li>
-              <li>For material changes, we will notify you via in-app notification or email</li>
-              <li>Continued use of the app after changes constitutes acceptance of the updated policy</li>
+              <li>Access, correct, or delete your data by contacting us at <a href="mailto:vhalan@pm.me">vhalan@pm.me</a>.</li>
+              <li>Withdraw consent by logging out or deleting your account.</li>
+              <li>Request full data deletion under applicable privacy laws (GDPR, UK DPA, CCPA).</li>
             </ul>
           </section>
 
           <section className="privacy-section">
-            <h2>11. Contact Us</h2>
+            <h2>5. Children's Privacy</h2>
             <p>
-              If you have questions, concerns, or requests regarding this Privacy Policy or your data, please contact:
+              CardCounter is intended for users <strong>aged 13 and above</strong>. We do not knowingly 
+              collect data from children under 13.
             </p>
+          </section>
+
+          <section className="privacy-section">
+            <h2>6. Data Security</h2>
+            <ul>
+              <li>AWS Cognito authentication with Sign in with Apple ensures secure log-in.</li>
+              <li>All communication uses HTTPS/TLS encryption.</li>
+              <li>We regularly review security configurations and permissions.</li>
+            </ul>
+          </section>
+
+          <section className="privacy-section">
+            <h2>7. Third-Party Services</h2>
+            <div className="services-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Service</th>
+                    <th>Purpose</th>
+                    <th>Data Shared</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Apple StoreKit 2</strong></td>
+                    <td>Handles in-app purchases and subscriptions</td>
+                    <td>Anonymous transaction IDs</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Apple Sign in with Apple</strong></td>
+                    <td>Authentication</td>
+                    <td>Anonymized Apple ID</td>
+                  </tr>
+                  <tr>
+                    <td><strong>AWS Amplify / AppSync / DynamoDB</strong></td>
+                    <td>Cloud sync and storage</td>
+                    <td>Profile + training data</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Core Data (Apple)</strong></td>
+                    <td>Local persistence</td>
+                    <td>Local-only progress data</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section className="privacy-section">
+            <h2>8. Changes to This Policy</h2>
+            <p>
+              We may update this policy to reflect new features or legal requirements. Revised versions 
+              are posted at <a href="https://carvum.life/privacyc/" target="_blank" rel="noopener noreferrer">https://carvum.life/privacyc/</a>.
+            </p>
+          </section>
+
+          <section className="privacy-section">
+            <h2>9. Contact Us</h2>
             <div className="contact-info">
-              <p><strong>Carvum Ltd</strong></p>
-              <p><strong>Data Protection Officer</strong></p>
-              <p>Email: <a href="mailto:vhalanappstore@icloud.com">vhalanappstore@icloud.com</a></p>
+              <p><strong>Carvum Limited</strong></p>
+              <p>Email: <a href="mailto:vhalan@pm.me">vhalan@pm.me</a></p>
               <p>Website: <a href="https://carvum.life" target="_blank" rel="noopener noreferrer">https://carvum.life</a></p>
             </div>
-            <p style={{ marginTop: '20px', fontSize: '0.95rem', color: '#666' }}>
-              We will respond to your inquiry within 30 days of receipt.
+          </section>
+
+          <section className="privacy-section summary-section">
+            <h2>Summary</h2>
+            <p className="summary-text">
+              CardCounter stores guest progress locally, syncs optional user data securely via AWS, 
+              processes payments only through Apple, and never tracks or sells your information. 
+              Your data stays private, encrypted, and under your control.
             </p>
           </section>
 
           <section className="privacy-section disclaimer">
             <h2>Educational Disclaimer</h2>
             <p className="disclaimer-text">
-              <strong>Blackjack Bible is an educational tool for probability and mental arithmetic practice. 
+              <strong>CardCounter is an educational tool for probability and mental arithmetic practice. 
               It is not intended for casino use or to promote gambling.</strong>
             </p>
           </section>
         </main>
 
         <footer className="privacy-footer">
-          <p>© 2025 Carvum Ltd. All rights reserved.</p>
-          <p>Last updated: October 16, 2025</p>
+          <p>© 2025 Carvum Limited. All rights reserved.</p>
+          <p>Last updated: October 30, 2025</p>
         </footer>
       </div>
     </div>
