@@ -6,6 +6,7 @@ import TreePage from './pages/TreePage';
 import MentalMath from './pages/MentalMath';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import EmpathyticsPolicy from './pages/EmpathyticsPolicy';
+import ShortVideoHiderPolicy from './pages/ShortVideoHiderPolicy';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     <Route path="/mentalmath" element={<MentalMath />} />
                     <Route path="/privacyc" element={<PrivacyPolicy />} />
                     <Route path="/empathticspolicy" element={<EmpathyticsPolicy />} />
+                    <Route path="/shortvideohiderpolicy" element={<ShortVideoHiderPolicy />} />
                 </Routes>
             </div>
         </Router>

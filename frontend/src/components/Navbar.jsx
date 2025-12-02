@@ -65,6 +65,11 @@ const Navbar = () => {
                 Empathytics Privacy Policy
               </a>
             </li>
+            <li>
+              <a href="/shortvideohiderpolicy">
+                Short Video Hider Privacy Policy
+              </a>
+            </li>
           </ul>
         </li>
         <li>Contact</li>
